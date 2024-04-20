@@ -3,10 +3,7 @@ const { PrismaClient } = require("@prisma/client");
 const db = new PrismaClient();
 
 async function main() {
-  // check if db is connected
-
   await db.$connect();
-
   if (db.$connect) {
     console.log("Connected to database");
   }
@@ -21,7 +18,7 @@ async function main() {
       { name: "Scientists" },
     ];
 
-    await db.category.createMany({
+    await db.Category.createMany({
       data: categories,
     });
 
