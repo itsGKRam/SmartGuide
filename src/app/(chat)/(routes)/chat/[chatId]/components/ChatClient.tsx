@@ -37,7 +37,7 @@ export const ChatClient = ({ companion }: ChatClientProps) => {
         setMessages((current) => [...current, systemMessage]);
         setInput("");
 
-        // router.refresh();
+        router.refresh();
       },
       onError(error) {
         console.error(error);

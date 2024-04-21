@@ -4,8 +4,6 @@ import { redirect } from "next/navigation";
 import prismadb from "@/lib/prismadb";
 import { ChatClient } from "./components/ChatClient";
 
-// import { ChatClient } from "./components/client";
-
 interface ChatIdPageProps {
   params: {
     chatId: string;

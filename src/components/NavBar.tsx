@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
 import { UserButton } from "@clerk/nextjs";
 import { Sparkles } from "lucide-react";
@@ -15,6 +16,8 @@ interface NavbarProps {
 }
 
 const NavBarComponent = ({ isPro }: NavbarProps) => {
+  const proModel = useProModal();
+
   return (
     <div className='fixed w-full z-50 flex justify-between items-center py-2 px-4 h-16 border-b border-primary/10 bg-secondary'>
       <div className='flex items-center'>
@@ -31,7 +34,7 @@ const NavBarComponent = ({ isPro }: NavbarProps) => {
       </div>
       <div className='flex items-center gap-x-3'>
         {!isPro && (
-          <Button size='sm' variant='premium'>
+          <Button onClick={proModel.onOpen} size='sm' variant='premium'>
             Upgrade
             <Sparkles className='h-4 w-4 fill-white text-white ml-2' />
           </Button>

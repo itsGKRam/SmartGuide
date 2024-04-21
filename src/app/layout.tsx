@@ -1,3 +1,4 @@
+import ProModel from "@/components/ProModel";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -26,6 +27,7 @@ export default function RootLayout({
             defaultTheme='system'
             enableSystem
             disableTransitionOnChange>
+            <ProModel />
             {children}
           </ThemeProvider>
         </body>
